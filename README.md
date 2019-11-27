@@ -23,7 +23,7 @@ BACKEND run on localhost:5555. Start up by:
 
 FRONTEND run on localhost:8080 Start up by:
 
-## Project was deploy to domain: https://hidden-sierra-14555.herokuapp.com/ by Heroku
+## Project was deploy to domain: https://lit-headland-14809.herokuapp.com/ by Heroku
 
 ## yarn start
 
