@@ -1,0 +1,61 @@
+.tabs {
+    display : flex;
+    width   : 100%;
+    position: relative;
+
+    .tab-list {
+        list-style-type: none;
+        display        : flex;
+        width          : 150px;
+        flex-direction : column;
+        padding-top    : 20px;
+
+        li {
+            padding        : 10px 0;
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+            color          : @txt2;
+
+            &.tab-list-active {
+                color           : @txt1;
+                background-color: @bgFooter;
+            }
+        }
+    }
+
+    .tab-content {
+        display         : flex;
+        width           : calc(100% - 130px);
+        position        : relative;
+        padding-top     : 20px;
+        background-color: #fff;
+        padding-left    : 15px;
+        padding-right   : 15px;
+
+        .item__content {
+            width   : 100%;
+            position: relative;
+        }
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .tabs {
+        display: block;
+
+        .tab-list {
+            width  : 100%;
+            display: block;
+        }
+
+        .tab-content {
+            width        : 100%;
+            padding-left : 0;
+            padding-right: 0;
+            display      : block;
+            overflow-x   : scroll;
+        }
+    }
+
+}

@@ -1,0 +1,53 @@
+.btn {
+    background: none;
+    border    : none;
+    cursor    : pointer;
+
+    &.btn-add {
+        background-color: @bgTHead;
+        color           : #fff;
+        font-size       : 1.5em;
+        padding         : 15px 20px;
+    }
+
+    &.btn-submit {
+        background-color: @bgTHead;
+        min-width       : 100px;
+        padding         : 10px 15px;
+        font-size       : 1em;
+        color           : #fff;
+        margin-top      : 15px;
+        margin-left     : 15px;
+        margin-bottom   : 15px;
+
+        &.cancel {
+            background-color: #fff;
+            border          : 1px solid @bgTHead;
+            color           : @bgTHead
+        }
+    }
+
+    &.btn-execute {
+        width           : 30px;
+        height          : 30px;
+        background-color: @bgTHead;
+        color           : #fff;
+        text-align      : center;
+        margin-left     : 10px;
+        border-radius   : 50%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .btn {
+        &.btn-add {
+            font-size: 1em;
+            position : relative;
+        }
+
+        &.btn-submit {
+            margin-right : 0;
+            margin-bottom: 15px;
+        }
+    }
+}

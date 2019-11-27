@@ -1,0 +1,16 @@
+{
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+    ],
+    "parser": "babel-eslint",
+    "globals": {
+        "FB": true
+    },
+    "env": {
+        "browser": true,
+        "node": true,
+        "jasmine": true,
+        "es6": true
+    }
+}

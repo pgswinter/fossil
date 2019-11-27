@@ -1,0 +1,118 @@
+.lists {
+    width: 100%;
+
+    .notification {
+        margin-bottom: 20px;
+
+        span {
+            color: @txt4;
+        }
+    }
+
+    .header__lists,
+    .footer__lists {
+        display: flex;
+
+        li {
+            flex           : 1 1 0;
+            align-items    : center;
+            justify-content: center;
+        }
+    }
+
+    .header__lists {
+        padding         : 10px 0;
+        background-color: @bgTHead;
+
+        li {
+            text-align: center;
+            color     : @txt1;
+            font-size : 0.8rem;
+
+            &:first-child {
+                flex: 2 1 0;
+            }
+        }
+    }
+
+    .bodyList {
+        border: 1px solid @line;
+
+        li {
+            height  : 70px;
+            position: relative;
+
+            .item__bodyList {
+                display      : flex;
+                height       : 100%;
+                border-bottom: 1px solid @line;
+
+                li {
+                    display        : flex;
+                    flex           : 1 1 0;
+                    align-items    : center;
+                    justify-content: center;
+                    height         : 100%;
+                    flex-direction : column;
+
+                    &:first-child {
+                        flex: 2 1 0;
+
+                        p {
+                            font-weight: 700;
+                        }
+
+                        label {
+                            padding         : 5px 0;
+                            background-color: @bgLeft;
+                            width           : 65%;
+                            border-radius   : 20px;
+                            text-align      : center;
+                            margin-top      : 0;
+                        }
+                    }
+
+                    &:not(:first-child) {
+                        justify-content: flex-start;
+                        padding-top    : 15px;
+                    }
+
+                    &:last-child {
+                        flex-direction: row;
+                        padding-top   : 0;
+                    }
+
+                    p {
+                        width     : 100%;
+                        text-align: center;
+                    }
+
+                    p,
+                    label {
+                        font-size: 0.8rem;
+                    }
+
+                    input[type='text'] {
+                        width: 90%;
+                    }
+                }
+
+                &.isEditting {
+                    li {
+                        label {
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .bodyList {
+        width     : 100%;
+        overflow-x: scroll;
+    }
+}

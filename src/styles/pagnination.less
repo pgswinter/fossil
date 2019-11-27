@@ -1,0 +1,60 @@
+.pagination {
+    display        : flex;
+    justify-content: flex-end;
+    margin-bottom  : 20px;
+    margin-right   : 30px;
+
+    li {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        width          : 50px;
+        height         : 50px;
+        border-radius  : 50%;
+        cursor         : pointer;
+
+        &.first,
+        &.last {
+            width: unset;
+        }
+
+        &.first {
+            margin-right: 25px;
+        }
+
+        &.last {
+            margin-left: 25px;
+        }
+
+        &.threeDotLeft {
+            &:after {
+                content     : '...';
+                padding-left: 20px;
+            }
+        }
+
+        &.active {
+            background-color: #000;
+            color           : @txt1;
+
+            &:not(:nth-child(2)) {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    &.threeDotFirst {
+        li {
+            &:nth-child(2) {
+                &:after {
+                    content     : '...';
+                    padding-left: 20px;
+                }
+            }
+
+            &.active {
+                margin-right: 0;
+            }
+        }
+    }
+}
