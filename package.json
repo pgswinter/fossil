@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "heroku-postbuild": "npm install && npm run build",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "dependencies": {
     "awesome-debounce-promise": "^2.1.0",
