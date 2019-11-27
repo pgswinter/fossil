@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open --hot",
+    "dev": "webpack-dev-server --mode development --open --hot",
+    "start": "yarn run build",
     "build": "webpack --mode production",
-    "heroku-postbuild": "npm install && npm run build"
+    "heroku-postbuild": "npm install && npm run build",
+    "heroku-prebuild": "npm install --dev"
   },
   "dependencies": {
     "awesome-debounce-promise": "^2.1.0",
