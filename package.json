@@ -1,33 +1,18 @@
 {
-  "name": "my-webpack",
+  "name": "pokedesk",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
-    "heroku-postbuild": "npm install && npm run build",
-    "heroku-prebuild": "npm install --dev"
+    "dev": "concurrently - kill-others \"yarn run api\" \"yarn run client\"",
+    "api": "cross-env NODE_ENV=development nodemon --exec babel-node app.js",
+    "client": "yarn --cwd client start",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "heroku-prebuild": "cd client && npm install --dev",
+    "start": "yarn prod",
+    "prod": "NODE_ENV=production babel-node app.js"
   },
   "dependencies": {
-    "awesome-debounce-promise": "^2.1.0",
-    "axios": "^0.19.0",
-    "lodash": "^4.17.15",
-    "moment": "^2.24.0",
-    "react": "^16.11.0",
-    "react-datepicker": "^2.9.6",
-    "react-debounce-input": "^3.2.2",
-    "react-dom": "^16.11.0",
-    "react-imageloader": "^3.0.0",
-    "react-loadable": "^5.5.0",
-    "react-redux": "^7.1.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0",
-    "redux": "^4.0.4",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-saga": "^1.1.1"
-  },
-  "devDependencies": {
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/node": "^7.6.3",
@@ -36,27 +21,15 @@
     "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.7.0",
     "@babel/register": "^7.6.2",
     "@babel/runtime-corejs2": "^7.6.3",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
-    "file-loader": "^4.2.0",
-    "html-webpack-plugin": "^3.2.0",
-    "less": "^3.10.3",
-    "less-loader": "^5.0.0",
-    "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.0",
-    "url-loader": "^2.2.0",
-    "webfont-webpack-plugin": "^1.0.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1"
   },
-  "engines": {
-    "node": "12.13.0",
-    "npm": "6.x",
-    "yarn": "1.x"
+  "devDependencies": {
+    "nodemon": "^1.19.4"
   }
 }
